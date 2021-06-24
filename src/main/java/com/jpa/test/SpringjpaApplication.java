@@ -12,6 +12,7 @@ import com.jpa.test.dao.UserRepo;
 import com.jpa.test.entity.User;
 
 
+
 @SpringBootApplication
 public class SpringjpaApplication {
 
@@ -102,7 +103,16 @@ public class SpringjpaApplication {
 		
 		List<User> u=userRepo.findByName("Minhaj Khan");
 		
-		u.forEach(n->System.out.print(n));
+		u.forEach(n->System.out.println(n));
+		
+		
+		System.out.println("---------------------------");
+		
+		List<User> user=userRepo.findAllUsers();
+		user.forEach(names->System.out.println(names));
+		
+		List<User> user1=userRepo.findByNameAndCity("Aryan","Hydrabad");
+		user1.forEach(u1->System.out.println(u1));
 		
 		
 		
